@@ -11,7 +11,9 @@ for(i=0;i<clo.length;i++){
 
 // Function for adding records when Add button is clicked
 function addLi(){
- 
+    document.getElementById('ii').style.display='none'
+    
+
     var li=document.createElement('li')
 
     var te = document.getElementById("inpp").value   
