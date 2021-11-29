@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <!--Font aweseome cdn-->
     <script src="https://kit.fontawesome.com/afdf6b96dc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>To-Do-App</title>
@@ -13,7 +13,12 @@
     <div class="dis">
     <div class='head'>
         <input type="text" class='inp' placeholder="What's on your mind" id='inpp' >
-        <span class="btn" onClick='addLi()'>Add</span>
+        <span class="btn" onClick='addList()'>Add</span>
+    </div>
+    <div class='err-msg' >
+        <p class='err-msg-txt' id="err-msg-txt"> </p>
+    </div>
+
     </div>
 
     <div>
@@ -21,7 +26,7 @@
         <input type="text" name="name" id="ii" placeholder='Nothing added yet' class="init">
         <ul class='lis' id="liss">
 
-          </ul>
+        </ul>
         
     </div>
 </div>

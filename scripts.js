@@ -1,69 +1,81 @@
 //For removing items when del icon is clicked
-var clo=document.getElementsByClassName('en')
-let i=0
-for(i=0;i<clo.length;i++){
-    clo[i].onclick=function() {
+let elements=document.getElementsByClassName('en')
+
+for(let i=0;i<elements.length;i++){
+    element[i].onclick=function() {
         let div=this.parentElement
         div.style.display='none'
     }
 }
 
+document.getElementById('inpp').addEventListener('focus',function() {
+    document.getElementById('err-msg-txt').innerHTML=''
+})
+
+function errorMessage(){
+    document.getElementById('err-msg-txt').innerHTML='Please enter some text first.'
+}
 
 // Function for adding records when Add button is clicked
-function addLi(){
-    document.getElementById('ii').style.display='none'
+let count=0
+function addList(){
     
+    let list=document.createElement('li')
 
-    var li=document.createElement('li')
-
-    var te = document.getElementById("inpp").value   
+    let textValue = document.getElementById("inpp").value   
     //Creating input of checkbox
-    var checkbox = document.createElement('input');
+    let checkbox =document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.name = "name";
     checkbox.value = "value";
     checkbox.id = "id";
-    checkbox.className='chk'
+    checkbox.className='chk';
     //Creating respective label
-    var label = document.createElement('label')
-    label.className='lab'
+    let label = document.createElement('label')
+    label.className='lab';
     label.htmlFor = "id";
-    label.appendChild(document.createTextNode(te));
+
+    label.appendChild(document.createTextNode(textValue));
 
     //Appending both chkbox and label
-    li.appendChild(checkbox);
-    li.appendChild(label);
+    list.appendChild(checkbox);
+    list.appendChild(label);
 
-    if (te==''){
-        alert("You must enter some text")
+    if (textValue==''){
+        errorMessage()
     }
     else{
-        document.getElementById('liss').appendChild(li)
+        document.getElementById('liss').appendChild(list)
+        count++
     }
+
     document.getElementById("inpp").value=''
     //Adding del icon.
-    var x = document.createElement('SPAN')
-    x.className='en'
-    var ico=document.createElement('i')
-    ico.className='far fa-trash-alt'
-    x.appendChild(ico)
-    li.appendChild(x)
+    let getSpan = document.createElement('SPAN')
+    getSpan.className='en'
+    let getIcon=document.createElement('i')
+    getIcon.className='far fa-trash-alt'
+    getSpan.appendChild(getIcon)
+    list.appendChild(getSpan)
 
-    var clo=document.getElementsByClassName('en')
-    let i=0
-    for(i=0;i<clo.length;i++){
+    if (count>0){
+        document.getElementById('ii').style.display='none'
+    }
+
+    let clo=document.getElementsByClassName('en')
+
+    for(let i=0;i<clo.length;i++){
         clo[i].onclick=function() {
             let div=this.parentElement
             div.style.display='none'
         }
     }
-
-
 }
 // For entering records when enter key is pressed
 document.addEventListener("keypress", function(e){
     if(e.key==='Enter'){
-        addLi()
+        addList()
+        document.getElementById('inpp').blur()
     }
 
     })

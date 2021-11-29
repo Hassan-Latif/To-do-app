@@ -20,12 +20,18 @@ body{
 .inp{
     margin-left: 10px;
     width: 60%;
-
+    
     padding: 15px;
     float: left;
     font-size:17px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px;
 
+}
+.err-msg-txt{
+    padding: 15px;
+    font-size: 27px;
+    color: yellow;
+    margin-left: 70px;
 }
 .btn{
     border: solid blue 1px;
